@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-      {% load static %}
-      <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
-      <meta charset="utf-8">
-      <title>My test page</title>
-  </head>
-  <body>
+{% extends "base.html" %}
+
+{% block page_content %}
+
       {% if latest_question_list %}
           <ul>
               {% for question in latest_question_list %}
@@ -16,5 +11,5 @@
       {% else %}
             <p>No polls are available.</p>
       {% endif %}
-  </body>
-</html>
+
+{% endblock %}

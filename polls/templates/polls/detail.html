@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My test page</title>
-  </head>
-  <body>
+{% extends "base.html" %}
+
+{% block page_content %}
+
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
 <fieldset>
@@ -17,5 +14,4 @@
 </fieldset>
 <input type="submit" value="Vote">
 </form>
-  </body>
-</html>
+{% endblock %}
