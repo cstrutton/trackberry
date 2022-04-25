@@ -17,6 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    # path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
+]
+
+# Polls app
+# urlpatterns += [
+#     path('polls/', include('polls.urls')),
+# ]
+
+urlpatterns += [
+    path('menu/', include('supervisor_menu.urls')),
 ]
