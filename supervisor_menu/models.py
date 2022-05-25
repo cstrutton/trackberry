@@ -9,10 +9,10 @@ class SupervisorMenuItem(models.Model):
 
     text = models.CharField(max_length=20, help_text='Menu Item Text')
     url = models.CharField(max_length=40)
-    ordering = models.IntegerField(default=)
+    ordering = models.IntegerField(default=1)
 
     def add_ten(self):
-        largest = self.objects.all
+        largest = self.objects.all().largest
 
     def __str__(self):
         return self.text
