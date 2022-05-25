@@ -1,0 +1,8 @@
+{% for item in sub_menu_list %}
+    {%  if item.name == "-" %}
+        <div class="dropdown-divider"></div>
+    {% else %}
+        <a class="dropdown-item dropdown" href="{{ item.url }}">{{ item.text }}</a>
+    {% endif %}
+{% endfor %}
+

@@ -1,5 +1,13 @@
 from django.contrib import admin
 
-from .models import SupervisorMenuItem
+from .models import SupervisorMenuItem, SupervisorSubMenuItem
 
-admin.site.register(SupervisorMenuItem)
+
+@admin.register(SupervisorMenuItem)
+class SupervisorMenuItemAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(SupervisorSubMenuItem)
+class SupervisorSubMenuItemAdmin(admin.ModelAdmin):
+    pass

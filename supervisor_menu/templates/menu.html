@@ -1,0 +1,18 @@
+{% for menu in menu_list %}
+    {% if menu.submenus|length %}
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    {% else %}
+        <li class="nav-item">
+            <a class="nav-item">
+    {% endif %}
+                {{ menu.text }}
+            </a>
+    {% if menu.submenus|length %}
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% include "sub_menu.html" with sub_menu_list=menu.submenus %}
+        </div>
+    {% endif %}
+        </li>
+{% endfor %}
+
